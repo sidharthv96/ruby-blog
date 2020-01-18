@@ -26,3 +26,8 @@
 <%= paginate @posts %>
 
 <%= link_to 'New post', new_post_path %>
+
+<h2>Recent Comments</h2>
+<ul>
+<%= render @comments %>
+</ul>
