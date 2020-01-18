@@ -61,3 +61,5 @@ gem 'pundit'
 #Pagination
 gem 'kaminari'
 
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
