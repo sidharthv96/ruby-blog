@@ -1,0 +1,10 @@
+<li>
+    <strong><%= comment.commenter %> :</strong>
+    <%= comment.body %>
+    <% if policy(comment).destroy? %>
+        | 
+        <%= link_to 'X', [comment.post, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+    <% end %>
+</li>
