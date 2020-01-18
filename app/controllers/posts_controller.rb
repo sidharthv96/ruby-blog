@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     skip_before_action :admin_authenticate, only: [:show, :index]
 
     def index
-        @posts = Post.all
+        @posts = Post.order(created_at: :desc).page params[:page]
     end
 
     def show
