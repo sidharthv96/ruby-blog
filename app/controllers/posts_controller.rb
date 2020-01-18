@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+    before_action :authenticate_user!, :admin_authenticate
+    skip_before_action :admin_authenticate, only: [:show, :index]
+
     def index
         @posts = Post.all
     end
@@ -27,6 +30,7 @@ class PostsController < ApplicationController
 
     def update
         @post = Post.find(params[:id])
+        authorize @post
         if @post.update(post_params)
             redirect_to @post
         else
