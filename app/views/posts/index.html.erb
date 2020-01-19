@@ -34,7 +34,11 @@
 
 <%= paginate @posts %>
 
+<% if policy(Post).update? %>
+
 <%= link_to 'New post', new_post_path, :class => "btn btn-success"%>
+
+<% end %>
 
 
 <h2>Recent Comments</h2>
